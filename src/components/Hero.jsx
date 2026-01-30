@@ -1,15 +1,23 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import hero1 from '../assets/images/hero1.png';
+import hero_luxury_home from '../assets/images/hero_luxury_home.png';
+import hero_building_dreams from '../assets/images/hero_building_dreams.png';
 import hero2 from '../assets/images/hero2.png';
 import hero3 from '../assets/images/hero3.png';
 import { Link } from 'react-router-dom';
 
 const slides = [
     {
+        id: 0,
+        image: hero_luxury_home,
+        title: "Where Luxury Meets Your Dream Home",
+        subtitle: "Hyderabad’s Most Trusted Builders",
+        description: "Curated Homes by Hyderabad’s Most Trusted Builders."
+    },
+    {
         id: 1,
-        image: hero1,
+        image: hero_building_dreams,
         title: "Building Dreams into Reality",
         subtitle: "Premium Construction & Property Development",
         description: "We transform visions into enduring landmarks with precision, quality, and innovation."

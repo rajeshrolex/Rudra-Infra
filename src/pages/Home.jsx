@@ -41,9 +41,14 @@ export default function Home() {
                                 <div className="p-8">
                                     <h3 className="text-xl font-bold mb-3 text-slate-900">{item.title}</h3>
                                     <p className="text-slate-600 mb-6">{item.desc}</p>
-                                    <Link to="/services" className="text-amber-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
-                                        Learn More <ArrowRight size={16} />
-                                    </Link>
+                                    <div className="flex items-center gap-4">
+                                        <Link to="/services" className="text-amber-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
+                                            Learn More <ArrowRight size={16} />
+                                        </Link>
+                                        <a href={`mailto:Sales@srirudrainfradevelopers.in?subject=Enquiry for ${item.title}&body=Hello, I am interested in learning more about ${item.title}. Please contact me.`} className="px-4 py-2 border border-slate-200 rounded-lg text-slate-600 text-sm font-semibold hover:bg-slate-50 hover:text-amber-600 transition-colors">
+                                            Enquire Now
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         ))}

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
-import logo from '../assets/images/logo.jpg';
+import logo from '../assets/images/logo-new.jpeg';
 
 export default function Footer() {
     return (
@@ -10,7 +10,7 @@ export default function Footer() {
                 <div>
                     <div className="flex items-center gap-3 mb-6">
                         <img src={logo} alt="SRID Logo" className="h-12 w-auto rounded border border-white/10" />
-                        <span className="font-bold text-white text-xl tracking-wide">SRI RUDRA INFRA</span>
+                        <span className="font-bold text-white text-xl tracking-wide">SRI RUDRA INFRA DEVELOPERS </span>
                     </div>
                     <p className="text-slate-400 mb-6 leading-relaxed">
                         Building dreams with precision and excellence. Your trusted partner in construction, property development, and real estate marketing.
@@ -78,11 +78,15 @@ export default function Footer() {
                         </li>
                         <li className="flex items-center gap-3">
                             <Phone className="text-amber-500 shrink-0" size={20} />
-                            <span>+91 98765 43210</span>
+                            <div className="flex flex-col">
+                                <span>+91 88867 81558</span>
+                                <span>+91 85005 10666</span>
+                                <span>+91 93902 51414</span>
+                            </div>
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail className="text-amber-500 shrink-0" size={20} />
-                            <span>info@srirudrainfra.com</span>
+                            <span>Sales@srirudrainfradevelopers.in</span>
                         </li>
                         <li className="mt-4 pt-4 border-t border-slate-800">
                             <span className="block text-sm text-slate-500">Business Hours:</span>

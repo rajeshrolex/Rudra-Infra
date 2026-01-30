@@ -1,43 +1,7 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import hero3 from '../assets/images/hero3.png';
-import constructionImg from '../assets/images/construction.png';
-import developmentImg from '../assets/images/development.png';
-import partnerImg from '../assets/images/partner.png';
-import architectureImg from '../assets/images/architecture.png';
-import interiorImg from '../assets/images/interior.png';
-import marketingImg from '../assets/images/marketing.png';
-
-const services = [
-    {
-        title: "Construction",
-        desc: "From residential villas to commercial complexes, we provide end-to-end construction services with a focus on structural integrity and timely delivery.",
-        img: constructionImg
-    },
-    {
-        title: "Property Development",
-        desc: "We identify and develop high-potential properties, transforming land into valuable assets and thriving communities.",
-        img: developmentImg
-    },
-    {
-        title: "Channel Partner Services",
-        desc: "We serve as authorized channel partners for reputed builders, helping you find the perfect property that meets your needs and budget.",
-        img: partnerImg
-    },
-    {
-        title: "Architecture & Planning",
-        desc: "Comprehensive architectural design and planning services to ensure space utilization and aesthetic appeal.",
-        img: architectureImg
-    },
-    {
-        title: "Interior Design",
-        desc: "Creating beautiful, functional interiors that reflect your style and enhance your living or working environment.",
-        img: interiorImg
-    },
-    {
-        title: "Marketing & Sales",
-        desc: "Strategic marketing solutions for real estate projects to reach the right audience and achieve sales targets.",
-        img: marketingImg
-    }
-];
+import { servicesData } from '../data/servicesData';
 
 export default function Services() {
     return (
@@ -66,16 +30,22 @@ export default function Services() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {services.map((service, i) => (
-                            <div key={i} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-slate-100 group overflow-hidden">
+                        {servicesData.map((service) => (
+                            <div key={service.id} className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-slate-100 group overflow-hidden flex flex-col">
                                 <div className="h-56 overflow-hidden">
                                     <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                                 </div>
-                                <div className="p-8">
+                                <div className="p-8 flex flex-col flex-grow">
                                     <h3 className="text-xl font-bold mb-4 text-slate-900">{service.title}</h3>
-                                    <p className="text-slate-600 leading-relaxed mb-4">
+                                    <p className="text-slate-600 leading-relaxed mb-6 flex-grow line-clamp-3">
                                         {service.desc}
                                     </p>
+                                    <Link
+                                        to={`/services/${service.id}`}
+                                        className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors mt-auto"
+                                    >
+                                        View Details <ArrowRight size={18} className="ml-2" />
+                                    </Link>
                                 </div>
                             </div>
                         ))}

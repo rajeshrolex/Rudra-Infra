@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/images/logo.jpg';
+import logo from '../assets/images/logo-new.jpeg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="SRID Logo" className="h-10 w-auto rounded" />
-          <span className="font-bold text-slate-900 text-lg hidden sm:block tracking-wide">SRI RUDRA INFRA</span>
+          <span className="font-bold text-amber-600 text-lg hidden sm:block tracking-wide">SRI RUDRA INFRA DEVELOPERS  </span>
         </Link>
 
         {/* Desktop Navigation */}
