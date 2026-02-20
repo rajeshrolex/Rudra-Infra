@@ -50,20 +50,48 @@ export default function ServiceDetail() {
                         </div>
 
                         {/* Content */}
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6 text-slate-900">{service.title}</h2>
-                            <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                                {service.detailedDesc || service.desc}
-                            </p>
-
-                            <div className="bg-slate-50 p-8 rounded-xl border border-slate-100">
-                                <h3 className="text-xl font-bold mb-4 text-slate-900">Interested in this service?</h3>
-                                <p className="text-slate-600 mb-6">
-                                    Contact us today to discuss your requirements and get a personalized quote.
+                        <div className="space-y-8">
+                            <div>
+                                <h2 className="text-3xl font-bold mb-6 text-slate-900">{service.title}</h2>
+                                <p className="text-lg text-slate-600 leading-relaxed">
+                                    {service.detailedDesc || service.desc}
                                 </p>
-                                <Link to="/contact" className="btn-primary w-full text-center block">
-                                    Get a Quote
-                                </Link>
+                            </div>
+
+                            {service.features && (
+                                <div className="space-y-8">
+                                    <div className="grid grid-cols-1 gap-6">
+                                        {service.features.map((feature, index) => (
+                                            <div key={index} className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                                                <h3 className="text-xl font-bold mb-2 text-slate-900">{feature.title}</h3>
+                                                <p className="text-slate-600 leading-relaxed whitespace-pre-line">
+                                                    {feature.description}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {service.closingDesc && (
+                                <p className="text-lg font-medium text-slate-800 italic border-l-4 border-amber-500 pl-4 py-2">
+                                    {service.closingDesc}
+                                </p>
+                            )}
+
+                            <div className="bg-slate-900 p-8 rounded-2xl text-white shadow-xl">
+                                <h3 className="text-2xl font-bold mb-4">Interested in this service?</h3>
+                                <p className="text-slate-300 mb-8 max-w-md">
+                                    Contact us today to discuss your requirements and see how we can help you achieve your goals.
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4">
+                                    <Link to="/contact" className="btn-primary flex-1 text-center py-4 bg-amber-500 hover:bg-amber-600 border-none">
+                                        Get Started
+                                    </Link>
+                                    <a href="tel:+91XXXXXXXXXX" className="flex-1 text-center py-4 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors">
+                                        Call Us Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
